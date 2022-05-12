@@ -1,0 +1,7 @@
+require("others.lualine")
+require("others.gps")
+require("others.hlslens")
+require("others.lastplace")
+require("others.telescope")
+require("others.symbols-outline")
+require("others.tree")
