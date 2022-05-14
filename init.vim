@@ -1,20 +1,48 @@
 set termguicolors
 set timeoutlen=500
 
-runtime ./vimScript/vimrc.vim
+" TODO: std=c++11 cmake clangd
+" TODO: gitsigns color
+" TODO: todo color
+" TODO: dap
 
-" runtime ./vimScript/maps.vim
 
-runtime ./vimScript/functions.vim
-
-
+noremap  <expr>0     col('.') == 1 ? '^': '0'
 
 call plug#begin('~/.config/nvim/plugged')
+
+" 
+
+
+" vimbooks
+Plug 'tom-anders/telescope-vim-bookmarks.nvim'
+Plug 'MattesGroeger/vim-bookmarks'
+
+
+" virtual text
+Plug 'haringsrob/nvim_context_vt'
+
+" lsp installing infomation right-below
+Plug 'j-hui/fidget.nvim'
+
+" args highlight
+Plug 'm-demare/hlargs.nvim'
+
+" 颜色
+
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'code-biscuits/nvim-biscuits'
+" 行尾图标
+
+
 " startuptime
-Plug 'rhysd/vim-startuptime'
+Plug 'rhysd/vim-startuptime' 
 
 " Winshift
 Plug 'sindrets/winshift.nvim'
+
+" gps
+Plug 'SmiteshP/nvim-gps'
 
 " Theme
 Plug 'projekt0n/github-nvim-theme' " github_* 主题
@@ -24,7 +52,7 @@ Plug 'ellisonleao/gruvbox.nvim' " gruvbox
 Plug 'AlessandroYorba/Alduin' " alduin 优雅
 Plug 'sainnhe/everforest'
 Plug 'glepnir/oceanic-material'
-Plug 'sonph/onehalf'
+Plug 'sonph/onehalf'    
 Plug 'joshdick/onedark.vim' " onedark
 Plug 'marko-cerovac/material.nvim'
 
@@ -39,7 +67,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
-" lualine - packer
 Plug 'akinsho/bufferline.nvim'
 
 " coding-base
@@ -48,6 +75,9 @@ Plug 'dense-analysis/ale' " 语法纠错
 
 " tree
 Plug 'kyazdani42/nvim-tree.lua'
+
+
+
 
 " 缩进视觉强化
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -73,7 +103,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " 按键绑定
 " Plug 'liuchengxu/vim-which-key'
 " Plug 'AckslD/nvim-whichkey-setup.lua'
-" Plug 'folke/which-key.nvim'
+Plug 'folke/which-key.nvim'
 
 " 界面
 Plug 'goolord/alpha-nvim'
@@ -152,17 +182,15 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ldelossa/litee.nvim'
 Plug 'ldelossa/litee-calltree.nvim'
 
+
 " hslens 
 Plug 'kevinhwang91/nvim-hlslens'
 
 Plug 'ethanholz/nvim-lastplace'
 
-
 call plug#end()
-
-
-colorscheme material
 
 
 
 lua require("init")
+

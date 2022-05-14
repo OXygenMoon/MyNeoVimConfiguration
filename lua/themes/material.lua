@@ -3,10 +3,10 @@ if not status_ok then
   return
 end
 
-material.setup({
+return material.setup({
 	contrast = {
 		sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
-		floating_windows = false, -- Enable contrast for floating windows
+		floating_windows = true, -- Enable contrast for floating windows
 		line_numbers = false, -- Enable contrast background for line numbers
 		sign_column = false, -- Enable contrast background for the sign column
 		cursor_line = false, -- Enable darker background for the cursor line
@@ -15,7 +15,7 @@ material.setup({
 	},
 
 	italics = {
-		comments = false, -- Enable italic comments
+		comments = true, -- Enable italic comments
 		keywords = false, -- Enable italic keywords
 		functions = false, -- Enable italic functions
 		strings = false, -- Enable italic strings
@@ -25,7 +25,8 @@ material.setup({
 	contrast_filetypes = { -- Specify which filetypes get the contrasted (darker) background
 		"terminal", -- Darker terminal background
 		"packer", -- Darker packer background
-		"qf" -- Darker qf list background
+		"qf", -- Darker qf list background
+		"telescope",
 	},
 
 	high_visibility = {

@@ -1,4 +1,4 @@
--- init.lua
+-- https://github.com/simrat39/symbols-outline.nvim
 vim.g.symbols_outline = {
     highlight_hovered_item = true,
     show_guides = true,
@@ -7,9 +7,9 @@ vim.g.symbols_outline = {
     relative_width = true,
     width = 25,
     auto_close = false,
-    show_numbers = false,
+    show_numbers = true,
     show_relative_numbers = false,
-    show_symbol_details = true,
+    show_symbol_details = false,
     preview_bg_highlight = 'Pmenu',
     keymaps = { -- These keymaps can be a string or a table for multiple keys
         close = {"<Esc>", "q"},

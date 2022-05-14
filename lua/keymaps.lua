@@ -1,4 +1,5 @@
 local opts = { noremap = true, silent = true }
+local opts_nosilent = { noremap = true }
 local no_opts = { noremap = false, silent = true }
 
 local term_opts = { silent = true }
@@ -58,7 +59,7 @@ func! CompileRunGcc()
 		exec "!g++ % -o %<"
 		exec "!time ./%<"
 	elseif &filetype == 'cpp'
-		exec "!g++ % -o %<"
+		exec "!g++ % -o -std=c++11 %<"
 		exec "!time ./%<"
 	elseif &filetype == 'java'
 		exec "!javac %"
@@ -85,7 +86,7 @@ keymap("n", "<C-e>", "15j", opts)
 
 -- 快速插入或移动光标
 keymap("n", "A", "$a", opts)
-keymap("n", "I", "0i", opts)
+keymap("n", "I", "^i", opts)
 
 -- 搜索
 keymap("n", "=", "nzz", no_opts)
@@ -96,8 +97,43 @@ keymap("n", "<leader><CR>", ":nohlsearch<CR>", no_opts)
 keymap("n", "tu", ":tabe<CR>", opts)
 keymap("n", "t=", ":+tabnext<CR>", opts)
 keymap("n", "t-", ":-tabnext<CR>", opts)
+keymap("n", "<leader>r", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<leader>e", ":BufferLineCyclePrev<CR>", opts)
+
+-- 移动文本
+keymap("n", "<leader>i", "<Esc>:m .+1<CR>", opts)
+keymap("n", "<leader>k", "<Esc>:m .-2<CR>", opts)
+
+-- visual -- 
+-- 控制缩进
+keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
+
 
 
 -- 插件
 -- NvimTree
 keymap("n", "<F2>", ":NvimTreeToggle<CR>", opts)
+
+-- telescope
+-- bookmark's
+keymap("n", "ma", "<cmd>Telescope vim_bookmarks current_file<cr>", opts)
+keymap("n", "mA", "<cmd>Telescope vim_bookmarks all<cr>", opts)
+
+-- calltree
+keymap("n", "<leader>in", "<cmd>lua vim.lsp.buf.incoming_calls()<cr>", opts)
+
+-- debug
+keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+keymap("n", "<leader>dB", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", opts)
+-- keymap("n", "<leader>dr", "lua require'dap'.repl.open()<cr>", opts)
+keymap("n", "<leader>dl", "lua require'dap'.run_last()<cr>", opts)
+keymap('n', '<F10>', '<cmd>lua require"user.dap.dap-util".reload_continue()<CR>', opts)
+keymap("n", "<F4>", "<cmd>lua require'dap'.terminate()<cr>", opts)
+keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
+keymap("n", "<F6>", "<cmd>lua require'dap'.step_over()<cr>", opts)
+keymap("n", "<F7>", "<cmd>lua require'dap'.step_into()<cr>", opts)
+keymap("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)
+keymap("n", "K", "<cmd>lua require'dapui'.eval()<cr>", opts)
+-- keymap("n", "<leader>dt", "<cmd>lua require'dapui'.toggle()<cr>", opts)
+-- keymap("n", "<leader>dx", "<cmd>lua require'dap'.terminate()<cr>", opts)

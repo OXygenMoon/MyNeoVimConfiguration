@@ -10,11 +10,12 @@ if not status_ok then
   return
 end
 
-local status = require'nvim-spotify'.status
+local ok, gps = pcall(require, "nvim-gps")
+if not ok then
+  vim.notify("nvim-gps not found!")
+  return
+end
 
--- local gps = require("nvim-gps")
-
-status:start()
 
 local colors = {
   blue   = '#80a0ff',
@@ -158,13 +159,12 @@ local config = {
   },
   sections = {
     lualine_a = { mode },
-    lualine_b = { diagnostics, filename, 
-    -- {
-    --   gps.get_location,
-    --   -- cond = gps.is_available,
-    --   always_visible = true,
-    --   separator = {left = "", right = ''},
-    -- },
+    lualine_b = { diagnostics, filename, {
+      gps.get_location,
+      -- cond = gps.is_available,
+      always_visible = true,
+      separator = {left = "", right = ''},
+    },
   },
     lualine_c = {},
     lualine_x = {},

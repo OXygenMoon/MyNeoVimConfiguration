@@ -22,6 +22,16 @@ vim.g.nvim_tree_icons = {
   },
 }
 
+-- vim.cmd [[
+-- let g:nvim_tree_show_icons = {
+--     \ 'git': 1,
+--     \ 'folders': 1,
+--     \ 'files': 1,
+--     \ 'folder_arrows': 1,
+--     \ }
+-- ]]
+
+
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
   vim.notify("nvim-tree not found!")
@@ -106,11 +116,6 @@ nvim_tree.setup({
     enable = true,
     ignore = true,
     timeout = 400,
-    -- icons = {
-        -- add = "1",
-        -- modified = "2",
-        -- deleted = "3",
-    -- },
   },
   actions = {
     use_system_clipboard = true,
@@ -150,6 +155,15 @@ nvim_tree.setup({
   },
 }
 )
+
+vim.cmd [[
+let g:nvim_tree_show_icons = {
+    \ 'git': 1,
+    \ 'folders': 1,
+    \ 'files': 1,
+    \ 'folder_arrows': 1,
+    \ }
+]]
 
 --
 -- with relative path
