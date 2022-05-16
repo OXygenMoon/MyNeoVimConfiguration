@@ -22,15 +22,6 @@ vim.g.nvim_tree_icons = {
   },
 }
 
--- vim.cmd [[
--- let g:nvim_tree_show_icons = {
---     \ 'git': 1,
---     \ 'folders': 1,
---     \ 'files': 1,
---     \ 'folder_arrows': 1,
---     \ }
--- ]]
-
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then

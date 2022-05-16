@@ -7,23 +7,27 @@ set timeoutlen=500
 " TODO: dap
 
 
-noremap  <expr>0     col('.') == 1 ? '^': '0'
 
+
+noremap  <expr>0     col('.') == 1 ? '^': '0'
+map <F1> <Nop>
 call plug#begin('~/.config/nvim/plugged')
 
-" 
+" autopairs
+Plug 'windwp/nvim-autopairs'
 
+" autosave
+Plug 'Pocco81/AutoSave.nvim'
+
+" hop
+Plug 'phaazon/hop.nvim'
 
 " vimbooks
 Plug 'tom-anders/telescope-vim-bookmarks.nvim'
 Plug 'MattesGroeger/vim-bookmarks'
 
-
 " virtual text
 Plug 'haringsrob/nvim_context_vt'
-
-" lsp installing infomation right-below
-Plug 'j-hui/fidget.nvim'
 
 " args highlight
 Plug 'm-demare/hlargs.nvim'

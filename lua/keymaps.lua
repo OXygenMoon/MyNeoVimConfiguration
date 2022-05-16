@@ -18,6 +18,7 @@ vim.g.maplocalleader = " "
 --   visual_block_mode = "x",
 --   term_mode = "t", command_mode = "c",
 
+
 -- 移动分屏
 keymap("n", "<leader>j", "<C-w>h", opts)
 keymap("n", "<leader>k", "<C-w>j", opts)
