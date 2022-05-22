@@ -123,6 +123,13 @@ local mappings = {
     "Clipboard Manager"
   },
 
+   
+  ["u"] = {
+    "<cmd>UndotreeToggle<CR>",
+    "Undo Tree"
+  },
+
+
   c = {
     name = "CMake",
     g = {"<cmd>CMake configure<CR>", "Configure"},
@@ -273,6 +280,7 @@ local mappings = {
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
+
 
 
   -- t = {

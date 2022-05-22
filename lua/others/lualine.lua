@@ -142,10 +142,17 @@ local filetype = {
 -- end local block
 
 
+
+
+
+
+
+
 local config = {
   options = {
     icons_enabled = true,
     theme = oxygen_theme,
+    --theme = "vscode",
     -- component_separators = { left = "", right = "" },
     component_separators = "",
     section_separators = { left = '', right = '' },
@@ -154,22 +161,26 @@ local config = {
       "dashboard",
       "NvimTree",
       "Outline",
+      "CHADTree"
     },
     always_divide_middle = true,
   },
   sections = {
     lualine_a = { mode },
-    lualine_b = { diagnostics, filename, {
-      gps.get_location,
-      -- cond = gps.is_available,
-      always_visible = true,
-      separator = {left = "", right = ''},
-    },
+    lualine_b = { 
+                    diagnostics,
+                    filename, 
+                    {
+                          gps.get_location,
+                          -- cond = gps.is_available,
+                          always_visible = true,
+                          separator = {left = "", right = ''},
+                    },
   },
     lualine_c = {},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = {diff, branch},
+    lualine_z = {"copilot", diff, branch},
   },
   inactive_sections = {
     lualine_a = {filename},

@@ -1,31 +1,12 @@
-#include<iostream>
+#include <iostream>
 #include <vector>
 using namespace std;
 
-void func(int a, int b,  string c){
-}
-
-class info{
-    public:
-        char name[4];
-        double score[4];
-        void fun(){
-            cout << "func" << endl;
-        }
-
-};
 
 int main(){
+    vector<vector<int>> vv;
+    vector<int> v;
+    string str;
 
-    vector<int> a;
-    for(int it : a)
-    {
-        cout << it; 
-    }
-
-    cout << "success" << endl;
-    cout << "success" << endl;
-    cout << "success" << endl;
-    cout << "success" << endl;
     return 0;
 }

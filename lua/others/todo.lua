@@ -16,7 +16,7 @@ todo_comments.setup {
       -- signs = false, -- configure signs for some keywords individually
     },
     TODO = { icon = " ", color = "info" },
-    HACK = { icon = " ", color = "hack" },
+    HACK = { icon = " ", color = "hack" },
     WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
     PERF = { icon = " ", color = "prepare", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
     NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
@@ -44,7 +44,7 @@ todo_comments.setup {
     error = { "#FF6347", "ErrorMsg", "#DC2626" },
 	warning = { "#F4A460", "WarningMsg", "#FBBF24" },
     hack = { "#FFF68F", "WarningMsg", "#FBBF24" },
-	info = { "#B4EEB4", "#2563EB" },
+	info = { "#7CCD7C", "#2563EB" },
 	prepare = {"#AEEEEE", "#2563EB"},
     hint = { "DiagnosticHint", "#10B981" },
     default = { "Identifier", "#7C3AED" },

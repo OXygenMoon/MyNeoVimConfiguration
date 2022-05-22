@@ -5,9 +5,9 @@ if not status_ok then
 end
 
 
-vim.api.nvim_exec("highlight GitAdd guifg=#00FF00", false)
-vim.api.nvim_exec("highlight GitChange guifg=#73cef4", false)
-vim.api.nvim_exec("highlight GitDelete guifg=#ffc24b", false)
+vim.api.nvim_exec("highlight GitAdd guifg=#008B00", false)
+vim.api.nvim_exec("highlight GitChange guifg=#1874CD", false)
+vim.api.nvim_exec("highlight GitDelete guifg=#CD5555", false)
 
 gitsigns.setup {
   signs = {

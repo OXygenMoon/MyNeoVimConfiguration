@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/oxygen/.config/nvim/build",
+  "command": "/usr/bin/clang++   -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -o CMakeFiles/a.dir/a.cpp.o -c /Users/oxygen/.config/nvim/a.cpp",
+  "file": "/Users/oxygen/.config/nvim/a.cpp"
+}
+]

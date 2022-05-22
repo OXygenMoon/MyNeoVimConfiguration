@@ -5,5 +5,6 @@ end
 
 require("lsp.lsp-installer")
 require("lsp.handlers").setup()
--- require("user.lsp.null-ls")
+-- require'lspconfig'.clangd.setup{}
+ require("lsp.null-ls")
 -- require("user.lsp.lsp-utils")

@@ -60,7 +60,7 @@ func! CompileRunGcc()
 		exec "!g++ % -o %<"
 		exec "!time ./%<"
 	elseif &filetype == 'cpp'
-		exec "!g++ % -o -std=c++11 %<"
+		exec "!g++ -std=c++11 % -o %<"
 		exec "!time ./%<"
 	elseif &filetype == 'java'
 		exec "!javac %"
@@ -82,6 +82,8 @@ endfunc
 -- 翻页
 keymap("n", "U", "5k", opts)
 keymap("n", "E", "5j", opts)
+keymap("v", "U", "5k", opts)
+keymap("v", "E", "5j", opts)
 keymap("n", "<C-u>", "15k", opts)
 keymap("n", "<C-e>", "15j", opts)
 
@@ -107,14 +109,12 @@ keymap("n", "<leader>k", "<Esc>:m .-2<CR>", opts)
 
 -- visual -- 
 -- 控制缩进
-keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
-
+keymap("v", "<", "<gv", opts)
 
 -- 插件
--- NvimTree
 keymap("n", "<F2>", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<F3>", "<cmd>AerialToggle<CR>", opts)
 
 -- telescope
 -- bookmark's
@@ -138,3 +138,22 @@ keymap("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)
 keymap("n", "K", "<cmd>lua require'dapui'.eval()<cr>", opts)
 -- keymap("n", "<leader>dt", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 -- keymap("n", "<leader>dx", "<cmd>lua require'dap'.terminate()<cr>", opts)
+
+
+
+vim.cmd [[
+        inoremap 。 .
+        inoremap ， ,
+        inoremap ？ ?
+        inoremap ； ;
+        inoremap ： :
+        inoremap ！ !
+        inoremap ‘ ''<ESC>i
+        inoremap ’ ''<ESC>i
+        inoremap “ ""<ESC>i
+        inoremap ” ""<ESC>i
+        inoremap （ ()<ESC>i
+        inoremap ） ()<ESC>i
+        inoremap 【 []<ESC>i
+        inoremap 】 []<ESC>i
+]]

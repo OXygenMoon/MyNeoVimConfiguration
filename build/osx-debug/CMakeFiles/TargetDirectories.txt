@@ -1,0 +1,3 @@
+/Users/oxygen/.config/nvim/build/osx-debug/CMakeFiles/a.dir
+/Users/oxygen/.config/nvim/build/osx-debug/CMakeFiles/edit_cache.dir
+/Users/oxygen/.config/nvim/build/osx-debug/CMakeFiles/rebuild_cache.dir

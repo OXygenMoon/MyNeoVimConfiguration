@@ -2,20 +2,51 @@ set termguicolors
 set timeoutlen=500
 
 " TODO: std=c++11 cmake clangd
-" TODO: gitsigns color
-" TODO: todo color
 " TODO: dap
-
-
-
+" TODO: live_grep_raw
 
 noremap  <expr>0     col('.') == 1 ? '^': '0'
 map <F1> <Nop>
+
+let g:syntastic_cpp_compiler = 'g++'  "change the compiler to g++ to support c++11. 
+let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++' "set the options of g++ to suport c++11.
+
+
+
 call plug#begin('~/.config/nvim/plugged')
+"
+"
+"
+"
+"
+" TODO:
+" HACK:
+" WARN:
+" PERF:
+" NOTE:
+
+" theme
+"Plug 'morhetz/gruvbox'
+"Plug 'sonph/onehalf'
+"Plug 'jaredgorski/spacecamp'
+Plug 'pacokwon/onedarkhc.vim'
+Plug 'Mofiqul/vscode.nvim'
+Plug 'LunarVim/onedarker.nvim'
+
+
+" undotree
+Plug 'mbbill/undotree'
+
+
+" cmake
+Plug 'Shatur/neovim-cmake'
+
+" copilot
+Plug 'github/copilot.vim'
 
 " autopairs
 Plug 'windwp/nvim-autopairs'
-
+"
 " autosave
 Plug 'Pocco81/AutoSave.nvim'
 
@@ -24,6 +55,7 @@ Plug 'phaazon/hop.nvim'
 
 " vimbooks
 Plug 'tom-anders/telescope-vim-bookmarks.nvim'
+Plug 'weeman1337/telescope-live-grep-raw.nvim'
 Plug 'MattesGroeger/vim-bookmarks'
 
 " virtual text
@@ -81,7 +113,8 @@ Plug 'dense-analysis/ale' " 语法纠错
 Plug 'kyazdani42/nvim-tree.lua'
 
 
-
+" lualine-copilot
+Plug '1478zhcy/lualine-copilot'
 
 " 缩进视觉强化
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -116,7 +149,7 @@ Plug 'p-z-l/aleph-nvim'
 " Git
 Plug 'lewis6991/gitsigns.nvim' " 显示git修正, hunk预览
 Plug 'sindrets/diffview.nvim' " 显示git diff
-Plug 'TimUntersberger/neogit' " 显示git log相关信息
+"Plug 'TimUntersberger/neogit' " 显示git log相关信息
 
 " nvim-dap TODO:
 
@@ -149,8 +182,6 @@ Plug 'rafamadriz/friendly-snippets' " 代码段合集 TODO:
 " python format
 Plug 'Chiel92/vim-autoformat'
 
-" " coc.nvim
-" Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
 " dash
 "Plug 'mrjones2014/dash.nvim', { 'do': 'make install' }
@@ -194,7 +225,9 @@ Plug 'ethanholz/nvim-lastplace'
 
 call plug#end()
 
-
-
 lua require("init")
+
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
 

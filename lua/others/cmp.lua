@@ -233,6 +233,7 @@ cmp_config = {
     { name = "emoji" },
     { name = "treesitter" },
     { name = "crates" },
+    --{ name = 'copilot' },
   },
   mapping = cmp.mapping.preset.insert {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
