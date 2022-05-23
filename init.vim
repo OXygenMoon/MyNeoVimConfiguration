@@ -1,22 +1,17 @@
 set termguicolors
 set timeoutlen=500
 
-" TODO: std=c++11 cmake clangd
 " TODO: dap
-" TODO: live_grep_raw
 
 noremap  <expr>0     col('.') == 1 ? '^': '0'
 map <F1> <Nop>
 
-let g:syntastic_cpp_compiler = 'g++'  "change the compiler to g++ to support c++11. 
-let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++' "set the options of g++ to suport c++11.
+"let g:syntastic_cpp_compiler = 'g++'  "change the compiler to g++ to support c++11. 
+"let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++' "set the options of g++ to suport c++11.
 
 
 
 call plug#begin('~/.config/nvim/plugged')
-"
-"
-"
 "
 "
 " TODO:
@@ -55,7 +50,6 @@ Plug 'phaazon/hop.nvim'
 
 " vimbooks
 Plug 'tom-anders/telescope-vim-bookmarks.nvim'
-Plug 'weeman1337/telescope-live-grep-raw.nvim'
 Plug 'MattesGroeger/vim-bookmarks'
 
 " virtual text
