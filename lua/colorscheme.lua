@@ -9,7 +9,9 @@ end
 
 if colorscheme == "material" then
   require "themes.material"
+  --vim.g.material_style = "darker"
   vim.g.material_style = "darker"
+  -- oceanic palenight lighter 
   vim.cmd 'colorscheme material'
 -- elseif colorscheme == "catppuccin" then
 --   require "user.themes.catppuccin"

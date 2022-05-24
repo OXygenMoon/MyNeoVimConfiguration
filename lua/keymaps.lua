@@ -68,9 +68,7 @@ func! CompileRunGcc()
 	elseif &filetype == 'sh'
 		:!time bash %
 	elseif &filetype == 'python'
-		set splitright
-		:sp
-		:term python3
+		exec "!python %"
 	elseif &filetype == 'html'
 		exec "!chromium % &"
 	elseif &filetype == 'markdown'

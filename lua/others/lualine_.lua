@@ -142,12 +142,6 @@ local filetype = {
 -- end local block
 
 
-
-
-
-
-
-
 local config = {
   options = {
     icons_enabled = true,

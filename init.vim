@@ -28,6 +28,8 @@ Plug 'pacokwon/onedarkhc.vim'
 Plug 'Mofiqul/vscode.nvim'
 Plug 'LunarVim/onedarker.nvim'
 
+" coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " undotree
 Plug 'mbbill/undotree'
@@ -144,7 +146,6 @@ Plug 'p-z-l/aleph-nvim'
 Plug 'lewis6991/gitsigns.nvim' " 显示git修正, hunk预览
 Plug 'sindrets/diffview.nvim' " 显示git diff
 "Plug 'TimUntersberger/neogit' " 显示git log相关信息
-
 " nvim-dap TODO:
 
 " lsp
@@ -167,6 +168,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'ray-x/cmp-treesitter'
 Plug 'stevearc/aerial.nvim'
+Plug 'p00f/clangd_extensions.nvim'
 
 
 " Snip
